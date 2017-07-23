@@ -1,0 +1,43 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Books Shops</title>
+</head>
+<body>
+    <div>
+        <h3>Books</h3>
+        <table>
+            <tr>
+                <td>
+                    <p>Books Name</p>
+                </td>
+                <td>
+                    <p>Author</p>
+                </td>
+                <td>
+                    <p>Price</p>
+                </td>
+            </tr>
+            @foreach (var item in ViewBag.Books) {
+                <tr>
+                    <td>
+                        <p>@item.name</p>
+                    </td>
+                    <td><p>@item.author</p></td>
+                    <td><p>@item.price</p></td>
+                    <td>
+                        <p>
+                            <a href="/home/buy/@item.id">buy</a>
+                       </p>
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+</body>
+</html>
